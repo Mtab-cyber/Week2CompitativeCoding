@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] ar = new int[n];
+        int t = scan.nextInt();
+        for(int i = 0; i < t ; i++){
+            int s = scan.nextInt();
+            s-=1;
+            int l = scan.nextInt();
+            for(;s<l;s++){
+                ar[s]++;
+            }
+        }
+        int x = scan.nextInt();
+        
+        for(int z = 0;z<x;z++){
+            int count = 0;
+            int q = scan.nextInt();
+            Arrays.sort(ar);
+            for(int k = n-1; k>0;k--){
+                if(ar[k]>=q){
+                    count++;
+                }
+                else
+                    break;
+            }
+            System.out.println(count);
+        }
+    }
+}
